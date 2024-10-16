@@ -1,32 +1,29 @@
 package com.example.Model;
 
-import java.util.Date;
-
 public class Products {
-    private String idProduct;
+    private int id;
     private String name;
     private double price;
-    private int quantity;
-    private Date expiryDate;
     private String description;
-    private float weight;
+    private int quantity;
 
-    public Products(String idProduct, String name, double price, int quantity, Date expiryDate, String description, float weight) {
-        this.idProduct = idProduct;
+    public Products(int id, String name, double price, String description) {
+        this.id = id;
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
-        this.expiryDate = expiryDate;
         this.description = description;
-        this.weight = weight;
+        this.quantity = 0;
     }
 
-    public void setIdProduct(String idProduct) {
-        this.idProduct = idProduct;
+    public Products(String id, String name, double price, int quantity, String description) {
     }
 
-    public String getIdProduct() {
-        return idProduct;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
     public void setName(String name) {
         this.name = name;
@@ -44,22 +41,6 @@ public class Products {
         return price;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setExpiryDate(Date expiryDate) {
-        this.expiryDate = expiryDate;
-    }
-
-    public Date getExpiryDate() {
-        return expiryDate;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -68,12 +49,8 @@ public class Products {
         return description;
     }
 
-    public void setWeight(float weight) {
-        this.weight = weight;
-    }
+    public void setQuantity(int quantity) {this.quantity = quantity;}
 
-    public float getWeight() {
-        return weight;
-    }
+    public int getQuantity() {return quantity;}
 }
 

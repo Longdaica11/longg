@@ -87,35 +87,5 @@ public class Orders {
         this.orders = orders;
     }
 
-    //Cập nhật đơn hàng
-    private void updateOrders() {
-        this.quantityOrders = 0;
-        this.price = 0.0;
-
-        for (Products sp : products) {
-            this.quantityOrders += sp.getQuantity();
-            this.price += sp.getPrice() * sp.getQuantity();
-        }
-    }
-
-    //Phương thức thêm sản phẩm
-    public void updateOrder (String idOrder, List<Products> newProducts, String newNotes, int quantityOrders) {
-        for (Orders orders : orders) {
-            if (orders.getIdOrder().equals(idOrder)) {
-
-                if (newProducts != null && !newProducts.isEmpty()) {
-                    orders.setProducts(newProducts);
-                }
-
-                if (newNotes != null && !newNotes.isEmpty()) {
-                    orders.setNotes(newNotes);
-                }
-
-                if (quantityOrders != 0) {
-                    orders.setQuantityOrders(quantityOrders);
-                }
-            }
-        }
-    }
 }
 

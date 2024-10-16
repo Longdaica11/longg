@@ -4,20 +4,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseConnection {
-    private Connection databaseLink;
+public class DatabaseLogin {
+    public Connection databaseLink;
 
     public Connection getConnection() {
-        // Thông tin kết nối cơ sở dữ liệu
         String databaseName = "qlbh";
         String databaseUser = "root";
-        String databasePassword = "1234";
-        String url = "jdbc:mysql://localhost:3306/" + databaseName;
+        String databasePassword = "123456a@";
+        String url = "jdbc:mysql://localhost:3306/qlbh";
 
         try {
-            // Kết nối tới cơ sở dữ liệu
+            Class.forName("com.mysql.cj.jdbc.Driver");
             databaseLink = DriverManager.getConnection(url, databaseUser, databasePassword);
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
 
